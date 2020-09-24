@@ -6,8 +6,6 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "rus");
-
-
     Money M1(80,50);
     Person P1;
    //  M1.setBalance(50, 50);
