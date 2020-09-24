@@ -130,8 +130,7 @@ public:
     }
 
 private:
-    string FirstName_;
-    string LastName_;
+    
 };
 int main()
 {
