@@ -1,26 +1,16 @@
 #pragma once
-
+#include "Money.h"
 using namespace std;
 
 class Person {
 public:
 
-    Person() { cout << "Конструктор Person " << this << endl; }
-
-    ~Person() { cout << "деструктор Person " << this << endl; }
-
-    void setBalance(int64_t rub, uint8_t kopeck)
-    {
-        double D_kopeck;
-        D_kopeck = (double)kopeck / 100;
-        balance_ = (double)rub + D_kopeck;
-        
-    }
-    double getBalance()
-    {
-        return balance_;
-    }
-
+    Person(const Money balance);
+   
+    ~Person();
+    
+    void getBalance(const Money balance);
+   
 private:
-    double balance_;
+    Money balance_;
 };
