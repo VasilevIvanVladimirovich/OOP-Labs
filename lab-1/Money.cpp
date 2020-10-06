@@ -12,11 +12,11 @@ Money::Money(int64_t rub, uint8_t kopeck)
 
 Money::~Money() { cout << "Деструктор Money " << this << endl; }
 
-int Money::getRub() 
+int Money::getRub()
 {
     return rub_;
 }
-int Money::getKopeck() 
+int Money::getKopeck()
 {
     return kopeck_;
 }
