@@ -5,9 +5,10 @@
 #include "stdint.h"
 #include "DateTime.h"
 #include "Person.h"
+#include "Money.h"
 #pragma once
 
-class Subscriptions:Money
+class Subscriptions
 {
 public:
    void setNameSubscriptions();
@@ -35,6 +36,7 @@ public:
 private:
     std::string name_subscriptions;
     DateTime time;
+    Money price;
     int key;
     int frequency_sub;
 };
