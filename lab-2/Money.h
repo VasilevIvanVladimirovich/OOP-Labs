@@ -1,4 +1,4 @@
-#ifndef LAB_OOP_MONEY_H
+ifndef LAB_OOP_MONEY_H
 #define LAB_OOP_MONEY_H
 #pragma once
 #include "stdint.h"
