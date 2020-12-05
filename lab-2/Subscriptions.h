@@ -4,20 +4,23 @@
 #include <string>
 #include "stdint.h"
 #include "DateTime.h"
-#include "Person.h"
 #include "Money.h"
+#include <vector>
 #pragma once
 
 class Subscriptions
 {
 public:
-   void setNameSubscriptions();
+
+    void setNameSubscriptions();
 
    void setPrice();
 
    void setKey();
 
    void setTime();
+
+   void setTime(int day);
 
    void printInfoSubscriptions();
 
@@ -29,14 +32,25 @@ public:
 
     Subscriptions();
 
+    ~Subscriptions();
+
+    int getFrequency_sub();
+
+    int getKey();
+
     int emptySubscriptions();
 
-    int balanceOperation(Person *P1);
+    int64_t getRubPriceSubscriptions();
+
+    uint8_t getKopeckPriceSubscriptions();
+
+    void setSubscriptions();
+
 
 private:
     std::string name_subscriptions;
     DateTime time;
-    Money price;
+    Money price = Money(0, 0);
     int key;
     int frequency_sub;
 };
