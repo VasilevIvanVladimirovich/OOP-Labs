@@ -56,11 +56,14 @@ void Subscriptions::setTime()
     std::cout<<std::endl;
 }
 
-
-Subscriptions::Subscriptions():price(0,0)
+void Subscriptions::setTime(int day)
 {
-    name_subscriptions="-";
+    time.nextDay(day);
 }
+
+Subscriptions::Subscriptions(){}
+
+Subscriptions::~Subscriptions(){}
 
 std::string Subscriptions::getNameSubscriptions()
 {
@@ -93,22 +96,30 @@ std::string Subscriptions::getTime()
     return str;
 }
 
-int Subscriptions::balanceOperation(Person *P1)
+int Subscriptions::getFrequency_sub()
 {
-    if(frequency_sub==1) time.nextDay(1);
-    else if(frequency_sub==2) time.nextDay(30);
-    else if(frequency_sub==3) time.nextDay(360);
-        if(key==1)
-        {
-            P1->OperationSumMoney(price.getRub(),price.getKopeck());
-            return 1;
-        }else if(key==2)
-        {
-            if(P1->OperationComparisonMoney(price.getRub(),price.getKopeck())==1)
-            {
-                P1->OperationMinusMoney(price.getRub(), price.getKopeck());
-                return 1;
-            }
-            else if(P1->OperationComparisonMoney(price.getRub(),price.getKopeck())==2) return 0;
-        }else P1->OperationMinusMoney(price.getRub(), price.getKopeck());
+    return frequency_sub;
+}
+
+int Subscriptions::getKey()
+{
+    return key;
+}
+
+int64_t Subscriptions::getRubPriceSubscriptions()
+{
+    return price.getRub();
+}
+
+uint8_t Subscriptions::getKopeckPriceSubscriptions()
+{
+    return price.getKopeck();
+}
+
+void Subscriptions::setSubscriptions()
+{
+    setNameSubscriptions();
+    setPrice();
+    setKey();
+    setTime();
 }
